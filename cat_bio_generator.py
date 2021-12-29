@@ -1,14 +1,36 @@
 import random
 
+# File names
+names_fname = "cat_names.txt"
+adjectives_fname = "cat_adjectives.txt"
+colours_fname = "cat_colours.txt"
+interests_fname = "cat_interests.txt"
+
 # Eventually these will be filled from some text files
-cat_names = ["Rufus", "Iggy", "Caramel", "Popcorn"]
-cat_colours = ["black", "red", "aquamarine"]
-cat_adjectives = ["fluffy", "sly", "bouncey", "graceful"]
-cat_interests = ["hiking", "stealing snacks", "fetch", "standing in the shower"]
+cat_names = []
+cat_colours = []
+cat_adjectives = []
+cat_interests = []
 
 bio_structure = "{name} is a {adjective} {colour} cat who enjoys {activity_01} and {activity_02}"
 
 # Function to read in files and store data
+def parse_file_into_list(file_name, list):
+    file = open(file_name, "r")
+
+    for line in file:
+        line_stripped = line.strip('\n')
+        list.append(line_stripped)
+
+    # print(list)
+    file.close()
+
+def parse_files():
+    # Could make a dictionary of filenames? Then loop through that to tidy this up
+    parse_file_into_list(names_fname, cat_names)
+    parse_file_into_list(colours_fname, cat_colours)
+    parse_file_into_list(adjectives_fname, cat_adjectives)
+    parse_file_into_list(interests_fname, cat_interests)
 
 # Function to pick data to fill in bio with
 def pick_element(list):
@@ -50,4 +72,5 @@ def display_bio():
         print("Have a nice day!")
 
 # Main code goes below here
+parse_files()
 display_greeting()
