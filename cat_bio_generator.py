@@ -33,8 +33,19 @@ def display_greeting():
     answer = input()
 
     if answer.lower() == 'y':
-        # print("CAT BIO HERE")
-        print(construct_bio())
+        display_bio()
+    else:
+        print("Have a nice day!")
+
+def display_bio():
+    print("\n")
+    print(construct_bio())
+    print("\n")
+    
+    print("Would you like to view another bio? Y/N")
+    answer = input()
+    if answer.lower() == 'y':
+        display_bio()
     else:
         print("Have a nice day!")
 
