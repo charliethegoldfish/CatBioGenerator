@@ -1,3 +1,10 @@
 black
 red
 aquamarine
+purple
+indigo
+brown
+orange
+tabby
+white
+pink
