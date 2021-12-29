@@ -6,7 +6,6 @@ adjectives_fname = "cat_adjectives.txt"
 colours_fname = "cat_colours.txt"
 interests_fname = "cat_interests.txt"
 
-# Eventually these will be filled from some text files
 cat_names = []
 cat_colours = []
 cat_adjectives = []
@@ -26,7 +25,6 @@ def parse_file_into_list(file_name, list):
     file.close()
 
 def parse_files():
-    # Could make a dictionary of filenames? Then loop through that to tidy this up
     parse_file_into_list(names_fname, cat_names)
     parse_file_into_list(colours_fname, cat_colours)
     parse_file_into_list(adjectives_fname, cat_adjectives)
@@ -46,8 +44,6 @@ def construct_bio():
     activity_02 = pick_element(cat_interests)
 
     return bio_structure.format(name=name, colour=colour, adjective=adj, activity_01=activity_01, activity_02=activity_02)
-
-# Function to display bio (should this be combined with above function?)
 
 # Function to take input
 def display_greeting():
